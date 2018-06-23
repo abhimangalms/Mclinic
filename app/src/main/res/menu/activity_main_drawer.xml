@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_user"
+            android:icon="@drawable/ic_menu_user"
+            android:title="Account" />
+        <item
+            android:id="@+id/nav_changePassword"
+            android:icon="@drawable/changepassword"
+            android:title="Change password" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_logout"
+            android:title="Logout" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_help"
+                android:title="Help" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:title="Send feedback" />
+            <item
+                android:id="@+id/nav_termsofservice"
+                android:title="Terms of Services" />
+            <item
+                android:id="@+id/nav_aboutus"
+                android:title="About us" />
+        </menu>
+    </item>
+
+</menu>

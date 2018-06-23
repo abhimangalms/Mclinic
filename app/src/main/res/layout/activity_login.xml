@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+   android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:background="@drawable/gradient">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:src="@drawable/icon"/>
+
+            <EditText
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:ems="10"
+                android:elevation="2dp"
+                android:paddingLeft="20dp"
+                android:background="#26C6DA"
+                android:hint= "Username"
+                android:textColorHint= "#FFF"
+                android:textColor="#FFFFFF"
+                android:maxLines="1"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/baseline"
+                android:drawableTint="#FFFF"
+                android:drawablePadding="10dp"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:elevation="2dp"
+                android:ems="10"
+                android:paddingLeft="20dp"
+                android:background="#4DD0E1"
+                android:textColor="#BDBDBD"
+                android:hint="Password"
+                android:textColorHint="#FFF"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/baselock"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <CheckBox
+                    android:id="@+id/rememberMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp"
+                    android:text="Remember me"
+                    android:textColor="#FFF"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot password ?"
+                    android:textColor="#FFF"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Login now"
+                android:textColor="#00BCD4"
+                android:padding="16dp"
+                android:background="@drawable/border"
+                android:textAllCaps="false"
+                android:backgroundTint="#FFF"
+                android:elevation="5dp"
+                android:clickable="true"
+                />
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OR"
+                    android:textColor="#FFF"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    />
+
+
+            <Button
+                android:id="@+id/signupButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Sign up"
+                android:textColor="#FFF"
+                android:padding="16dp"
+                android:background="@drawable/border"
+                android:textAllCaps="false"
+                android:backgroundTint="#00B8D4"
+                android:elevation="5dp"
+                android:clickable="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By using M-Clinic You agree to Terms of use \n and Privacy policy."
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textColor="#9E9E9E"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
