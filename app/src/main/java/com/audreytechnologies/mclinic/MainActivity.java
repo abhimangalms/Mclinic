@@ -3,6 +3,9 @@ package com.audreytechnologies.mclinic;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,15 +15,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    NavigationView navigationView = null;
+    Toolbar toolbar = null;
+
+    EditText editText;
+    ListView listView;
+    ArrayList<String> listItems;
+    ArrayAdapter<String> adapter;
+    String[] items;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setTitle("Patient list");
+
+        editText = (EditText) findViewById(R.id.searchEditText);
+        listView = (ListView) findViewById(R.id.searchListView);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -38,9 +62,61 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        initList();
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.toString().equals("")){
+                    //reset listview
+                    initList();
+                }
+                else{
+
+                    //perform search
+                    searchItem(charSequence.toString());
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
+
+    public void searchItem(String textToSearch){
+
+        for (String item:items){
+
+            if (!item.contains(textToSearch)){
+
+                listItems.remove(item);
+            }
+        }
+        adapter.notifyDataSetChanged();
+
+    }
+
+    public void initList() {
+
+        items = new String[]{"abhi", "mangal", "ms", "cherai"};
+        listItems = new ArrayList<>(Arrays.asList(items));
+
+        adapter = new ArrayAdapter<String>(this, R.layout.list_item_layout, R.id.textitem, listItems);
+        listView.setAdapter(adapter);
+
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -81,12 +157,15 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_user) {
 
-        } else if (id == R.id.nav_changePassword) {
+        }
+        else if (id == R.id.nav_user) {
 
-        } else if (id == R.id.nav_logout) {
+        }
+        else if (id == R.id.nav_changePassword) {
+
+        }
+        else if (id == R.id.nav_logout) {
 
         }
 
