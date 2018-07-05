@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
 
-                Intent intent = new Intent(getApplicationContext(),UserProfile.class);
+                Intent intent = new Intent(getApplicationContext(),AddUserActivity.class);
                 startActivity(intent);
             }
         });
