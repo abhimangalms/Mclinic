@@ -9,16 +9,51 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <EditText
-        android:id="@+id/searchEditText"
-        android:hint="Search here"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_margin="16dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="@drawable/gradientbackground">
 
-        android:background="@drawable/border"/>
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_gravity="center"
+            android:hint="Search here"
+            android:paddingLeft="20dp"
+            android:elevation="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="16dp"
+            android:background="#FFF"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:text="Search"
+                android:textAllCaps="false"
+                android:background="@drawable/border"
+                android:layout_margin="5dp"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:text="List all"
+                android:textAllCaps="false"
+                android:background="@drawable/border"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <ListView
+        android:elevation="5dp"
         android:id="@+id/searchListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
