@@ -30,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SignupActivity.this, "Welcom to M-Clinic", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
         });

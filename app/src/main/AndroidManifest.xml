@@ -19,9 +19,14 @@
         <activity android:name=".SignupActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UserProfile" />
-        <activity android:name=".AddUserActivity"></activity>
+        <activity android:name=".AddUserActivity" />
+        <activity android:name=".QuestionsActivity" />
+        <activity
+            android:name=".AskPatientActivity"
+            android:label="@string/title_activity_ask_patient"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

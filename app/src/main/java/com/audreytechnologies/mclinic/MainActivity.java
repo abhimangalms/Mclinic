@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity
 
     public void initList() {
 
-        items = new String[]{"abhi", "mangal", "ms", "cherai"};
+        items = new String[]{"Jain", "Siri", "Lans", "Duen"};
         listItems = new ArrayList<>(Arrays.asList(items));
 
         adapter = new ArrayAdapter<String>(this, R.layout.list_item_layout, R.id.textitem, listItems);
