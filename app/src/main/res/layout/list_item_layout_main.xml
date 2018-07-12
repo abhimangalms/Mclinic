@@ -31,6 +31,15 @@
         android:layout_marginLeft="50dp">
 
         <TextView
+            android:id="@+id/textDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Old patient"
+            android:textSize="10dp" />
+
+        <TextView
             android:id="@+id/textitem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,16 +48,6 @@
             android:text="Name"
             android:textColor="#000"
             android:textSize="16sp"/>
-
-        <TextView
-            android:id="@+id/textDetails"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:textSize="10dp"
-            android:text="Old patient"
-           />
 
 
     </LinearLayout>

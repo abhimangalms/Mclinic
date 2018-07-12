@@ -3,8 +3,6 @@ package com.audreytechnologies.mclinic;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -117,10 +115,11 @@ public class MainActivity extends AppCompatActivity
         items = new String[]{"Jain", "Siri", "Lans", "Duen"};
         listItems = new ArrayList<>(Arrays.asList(items));
 
-        adapter = new ArrayAdapter<String>(this, R.layout.list_item_layout, R.id.textitem, listItems);
+        adapter = new ArrayAdapter<String>(this, R.layout.list_item_layout_main, R.id.textitem, listItems);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
@@ -130,7 +129,6 @@ public class MainActivity extends AppCompatActivity
                     Intent intent = new Intent(getApplicationContext(), UserProfile.class);
                     startActivity(intent);
                 }
-
             }
         });
 
