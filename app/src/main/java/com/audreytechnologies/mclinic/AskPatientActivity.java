@@ -32,7 +32,7 @@ public class AskPatientActivity extends AppCompatActivity {
         setTitle("Answer me");
         makeListView();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.save);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,9 +46,13 @@ public class AskPatientActivity extends AppCompatActivity {
 
         //making listview for questions
 
-        questionsArray = new String[]{getString(R.string.question_1), getString(R.string.question_2), getString(R.string.question_3), getString(R.string.question_4), getString(R.string.question_5)};
-        listItems = new ArrayList<>(Arrays.asList(questionsArray));
+        String[] questionsArray  = {"Medical prescription", getString(R.string.question_1), getString(R.string.question_2), getString(R.string.question_3), getString(R.string.question_4), getString(R.string.question_5)};
 
+        //or you ca try this method to insert data to a listview
+
+        /* questionsArray = new String[]{"Medical prescription", getString(R.string.question_1), getString(R.string.question_2), getString(R.string.question_3), getString(R.string.question_4), getString(R.string.question_5)};
+           listItems = new ArrayList<>(Arrays.asList(questionsArray));
+        */
         adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.list_item_layout_ask_patient, R.id.questions, questionsArray);
         listView.setAdapter(adapter);
         ViewCompat.setNestedScrollingEnabled(listView, true);

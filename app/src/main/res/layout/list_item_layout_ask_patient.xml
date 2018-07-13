@@ -45,10 +45,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:paddingLeft="1dp"
-                android:hint="Write something here."
+                android:hint="Write something here"
                 android:textColor="#000"
                 android:textColorHint="#BDBDBD"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:elevation="5dp"/>
 
 
