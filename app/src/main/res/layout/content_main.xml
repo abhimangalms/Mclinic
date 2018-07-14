@@ -40,9 +40,9 @@
                 android:layout_height="35dp"
                 android:text="List all"
                 android:elevation="5dp"
-                android:textColor="#FFF"
+                android:textColor="#000"
                 android:textAllCaps="false"
-                android:backgroundTint="#00BFA5"
+                android:backgroundTint="#FFF"
                 android:background="@drawable/searchbar"/>
 
 

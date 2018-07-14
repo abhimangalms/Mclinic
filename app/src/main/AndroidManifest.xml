@@ -26,7 +26,8 @@
             android:name=".AskPatientActivity"
             android:label="@string/title_activity_ask_patient"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateHidden|adjustPan"/>
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".MyProfileActivity"></activity>
     </application>
 
 </manifest>

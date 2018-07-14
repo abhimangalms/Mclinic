@@ -1,5 +1,7 @@
 package com.audreytechnologies.mclinic;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,9 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AskPatientActivity extends AppCompatActivity {
 
@@ -35,9 +37,38 @@ public class AskPatientActivity extends AppCompatActivity {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.save);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(final View view) {
+
+                new android.app.AlertDialog.Builder(AskPatientActivity.this)
+                        .setIcon(android.R.drawable.ic_menu_save)
+                        .setTitle("Save ?")
+                        .setMessage("Are you sure you want to save this patient details ?")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                Intent i = new Intent(AskPatientActivity.this, MainActivity.class);
+
+                                Toast.makeText(AskPatientActivity.this, "One patient added", Toast.LENGTH_SHORT).show();
+                                startActivity(i);
+                                finish();
+                                //finish();
+                            }
+
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                Snackbar.make(view, "Profile not saved", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+
+                            }
+
+                        })
+                        .show();
             }
         });
     }
